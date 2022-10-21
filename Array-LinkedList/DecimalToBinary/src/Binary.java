@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Binary {
@@ -6,17 +7,17 @@ public class Binary {
    public void toBinary(int number){
        Stack<Integer> stack = new Stack<>();
        mainStack = new Stack<>();
+       stack.add(number);
        do{
            int soDu = number / 2;
            stack.add(soDu);
            number = soDu;
        }while (number / 2 !=0);
-       stack.add(0);
-       for(int i=0; i < stack.size(); i++){
+       for(int i= stack.size()-1; i >= 0; i--){
            if(stack.get(i) % 2 ==0){
-               mainStack.add(1);
-           }else{
                mainStack.add(0);
+           }else{
+               mainStack.add(1);
            }
        }
    }
