@@ -8,7 +8,7 @@ public class Main {
         for(int i=0; i< myStack.size; i++){
             System.out.printf("arr[%s] = %s\n", i, myStack.arr[i]);
         }
-        for(int i=1; i<= myStack.index; i++){
+        while (!myStack.isEmpty()){
             myStack.pop();
         }
         System.out.println("SIZE: "+myStack.size());
