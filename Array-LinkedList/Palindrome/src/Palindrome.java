@@ -14,7 +14,7 @@ public class Palindrome {
     public Stack<String> getStack(){
         return stack;
     }
-    public Stack<String> getQueue(){
+    private Stack<String> getQueue(){
         queue = new Stack<>();
         for(int i= stack.size()-1; i>=0; i--){
             queue.add(stack.get(i));
@@ -22,9 +22,10 @@ public class Palindrome {
         return queue;
     }
     public boolean isPalindrome(){
+        getQueue();
         for(int i=0; i<stack.size(); i++){
-            System.out.printf(stack.get(i) + " " + queue.get(queue.size()-1-i) + "\n");
-            if(!stack.get(i).equals(queue.get(queue.size()-1-i))){
+            System.out.printf(stack.get(i) + " " + queue.get(i) + "\n");
+            if(!stack.get(i).equalsIgnoreCase(queue.get(i))){
                 return false;
             }
         }
