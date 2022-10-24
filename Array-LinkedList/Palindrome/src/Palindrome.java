@@ -4,6 +4,7 @@ public class Palindrome {
     private String str;
     private Stack<String> queue;
     private Stack<String> stack;
+    private Queue<String> queueq;
     public void splitPalindrome(String str){
         String[] arrStr = str.split("");
         stack = new Stack<>();
